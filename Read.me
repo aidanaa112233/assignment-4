@@ -1,1 +1,90 @@
+Graph Traversal and Representation System
+Name:Tumenbai Aidana
+Group:SE-2511
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Project Overview
+The system uses an adjacency list representation to store graph connections efficiently. The project includes implementations of: Breadth-First Search (BFS),Depth-First Search (DFS)
+The program creates graphs of different sizes and compares traversal performance using execution time measurements.
+# Graph Structure
+A graph consists of:
+Vertices (nodes)
+Edges (connections between nodes)
+In this project:
+- Vertices are represented using the `Vertex` class
+- Edges are represented using the `Edge` class
+- The graph is stored using an adjacency list
+This means vertex 0 is connected to vertices 1 and 2.
+# Adjacency List Representation
+The graph uses a `HashMap<Integer, List<Integer>>` as an adjacency list.
+Advantages of adjacency lists:
+Efficient memory usage
+Fast traversal
+Suitable for sparse graphs
+Easy to add edges and vertices
+# Class Descriptions
+Vertex Class:
+The `Vertex` class represents a node in the graph.
+Fields:
+`id` — unique identifier of the vertex
+
+
+Edge Class
+The `Edge` class represents a connection between two vertices.
+Fields:
+`source`
+`destination`
+
+Graph Class
+The `Graph` class manages the graph structure and traversal algorithms,The graph is implemented using an adjacency list.
+
+Experiment Class
+The `Experiment` class is responsible for: Running BFS and DFS,Measuring execution time,Testing different graph sizes,Printing results
+# Breadth-First Search (BFS)
+Breadth-First Search explores the graph level by level.
+The algorithm uses:
+- Queue
+- Visited set
+BFS Process
+1. Start from a selected vertex
+2. Visit all neighboring vertices
+3. Add neighbors to the queue
+4. Continue until the queue becomes empty
+
+# Observations
+- Execution time increased as the graph size became larger.
+- Both BFS and DFS showed similar performance.
+- DFS was slightly faster in some experiments because of recursive traversal.
+- Results matched the expected complexity of O(V + E).
+# Analysis Questions
+
+## How does graph size affect BFS and DFS performance?
+As the number of vertices and edges increases, traversal algorithms require more operations. Therefore, execution time becomes larger for bigger graphs.
+## Which traversal was faster in the experiments?
+DFS was slightly faster in some tests because recursion allowed direct traversal without maintaining a large queue structure.
+## Do results match the expected complexity O(V + E)?
+Yes. Both algorithms visited each vertex and edge once, which matches the theoretical complexity O(V + E).
+## How does graph structure affect traversal order?
+Traversal order depends on how vertices are connected in the adjacency list. Different edge connections produce different BFS and DFS outputs.
+## When is BFS preferred over DFS?
+BFS is preferred when searching for the shortest path or exploring nodes level by level.
+## What are the limitations of DFS?
+DFS may use large recursion depth on very large graphs and can consume more stack memory.
+# Reflection
+During this project, I learned how graph traversal algorithms work and how graphs can be represented using adjacency lists. I also improved my understanding of object-oriented programming in Java by separating the program into multiple classes.
+One of the most interesting parts was comparing BFS and DFS traversal behavior. BFS explores level by level, while DFS goes deeply into the graph before backtracking. I also learned how to measure algorithm performance using `System.nanoTime()` and analyze time complexity.
